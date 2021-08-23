@@ -11,6 +11,10 @@ public class AlienNumber {
         arr.add('^');
         arr.add('&');
         arr.add('*');
+        succ_alien(str1);
+    }
+
+    public static void succ_alien(String str1) {
         ArrayList<Integer> num = new ArrayList<>();
         for (int i = 0; i < str1.length(); i++) {
             num.add(arr.indexOf(str1.charAt(i)));
@@ -28,7 +32,6 @@ public class AlienNumber {
         String encodedStr = encode(res);
         System.out.println(encodedStr);
     }
-
     public static String encode (String result) {
         String encodedStr = "";
         for (int i = 0; i < result.length(); i++)
