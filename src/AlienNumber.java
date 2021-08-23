@@ -1,6 +1,7 @@
 import java.util.*;
 
 public class AlienNumber {
+    //ArrayList of a number to store the value of each special char.
     static ArrayList<Character> arr = new ArrayList<>();
     public static void main(String args[]) {
         //String input
@@ -9,7 +10,6 @@ public class AlienNumber {
         String str3 = "^!@*!";
         String str4 = "@@@!!!!";
         String str5 = "!!!@@";
-        //ArrayList of a number to store the value of each special char.
         arr.add('!');
         arr.add('@');
         arr.add('^');
@@ -28,25 +28,26 @@ public class AlienNumber {
             num.add(arr.indexOf(str1.charAt(i)));
         }
         System.out.println(num);
-        //Decimal equivalent of encoded string
         int decimal = getDecimalVal(num);
-        //Stores result string
         String res = increasedNum(decimal);
-        //Adding zero at the start
-//        if (num.get(0) == 0)
-//            res = '0'+res;
+
+        //Considering leading zeros
+        int j = 0;
         for (int i = 0; i < num.size(); i++) {
             if (num.get(i) == 0)
                 res = '0'+res;
             else
                 break;
+            j++;
         }
-
-        //Encoding the increased number
+        if (j == num.size())
+            res = res.substring(1);
         System.out.println(res);
         String encodedStr = encode(res);
         System.out.println(encodedStr);
     }
+
+    //Encoding the increased number
     public static String encode (String result) {
         String encodedStr = "";
         for (int i = 0; i < result.length(); i++)
@@ -54,6 +55,7 @@ public class AlienNumber {
         return encodedStr;
     }
 
+    //Returns result string
     public static String increasedNum(int decimal) {
         String res = "";
         //Increase the decimal value
@@ -65,6 +67,8 @@ public class AlienNumber {
         }
         return res;
     }
+
+    //Decimal equivalent of encoded string
     public static int getDecimalVal(ArrayList<Integer> num) {
         int decimal = 0;
         for (int i = 0; i < num.size(); i++) {
