@@ -1,11 +1,11 @@
 import java.util.*;
 
 public class AlienNumber {
+    static ArrayList<Character> arr = new ArrayList<>();
     public static void main(String args[]) {
         //String input
         String str1 = "!@^*!";
         //ArrayList of a number to store the value of each special char.
-        ArrayList<Character> arr = new ArrayList<>();
         arr.add('!');
         arr.add('@');
         arr.add('^');
@@ -16,14 +16,28 @@ public class AlienNumber {
             num.add(arr.indexOf(str1.charAt(i)));
         }
         System.out.println(num);
-        //Stores result string
-        String res = "";
         //Decimal equivalent of encoded string
-        int decimal = 0;
-        for (int i = 0; i < num.size(); i++) {
-            decimal += Math.pow(5, num.size() - i - 1)*num.get(i);
-        }
-//        System.out.println(decimal);
+        int decimal = getDecimalVal(num);
+        //Stores result string
+        String res = increasedNum(decimal);
+        //Adding zero at the start
+        if (num.get(0) == 0)
+            res = '0'+res;
+        //Encoding the increased number
+        System.out.println(res);
+        String encodedStr = encode(res);
+        System.out.println(encodedStr);
+    }
+
+    public static String encode (String result) {
+        String encodedStr = "";
+        for (int i = 0; i < result.length(); i++)
+            encodedStr += arr.get(result.charAt(i) - 48);
+        return encodedStr;
+    }
+
+    public static String increasedNum(int decimal) {
+        String res = "";
         //Increase the decimal value
         decimal = decimal + 1;
         while (decimal > 0) {
@@ -31,14 +45,13 @@ public class AlienNumber {
             res = rem+res;
             decimal = decimal/5;
         }
-        //Adding zero at the start
-        if (num.get(0) == 0)
-            res = '0'+res;
-        //Encoding the increased number
-        String encodedStr = "";
-        for (int i = 0; i < res.length(); i++)
-            encodedStr += arr.get(res.charAt(i) - 48);
-        System.out.println(res);
-        System.out.println(encodedStr);
+        return res;
+    }
+    public static int getDecimalVal(ArrayList<Integer> num) {
+        int decimal = 0;
+        for (int i = 0; i < num.size(); i++) {
+            decimal += Math.pow(5, num.size() - i - 1)*num.get(i);
+        }
+        return decimal;
     }
 }
