@@ -62,8 +62,8 @@ public class AlienNumber {
         decimal = decimal + 1;
         while (decimal > 0) {
             int rem = decimal % 5;
-            res = rem+res;
-            decimal = decimal/5;
+            res = rem + res;
+            decimal = decimal / 5;
         }
         return res;
     }

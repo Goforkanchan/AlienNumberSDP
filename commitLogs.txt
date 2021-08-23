@@ -1,0 +1,54 @@
+commit 277445f862ab4c5b08a1be921bae412a631c78eb
+Author: Goforkanchan <kanchanmahajan67@gmail.com>
+Date:   Mon Aug 23 16:01:17 2021 +0530
+
+    Handled a case when string contains all zeros.
+
+commit 9b747ae192c08eeeb4617bc190c9bc4d9ab700c0
+Author: Goforkanchan <kanchanmahajan67@gmail.com>
+Date:   Mon Aug 23 15:18:25 2021 +0530
+
+    All leading zeros were getting ignored except the first one. Modified code to handle all leading zeros.
+
+commit 3724f0ed6124a20320e17cabf14754a6651adebc
+Author: Goforkanchan <kanchanmahajan67@gmail.com>
+Date:   Mon Aug 23 14:17:00 2021 +0530
+
+    Modified way of taking input. Added a function for it.
+
+commit a0b7b194511c9b05bbe1c87f7aad2b8e96121678
+Author: Goforkanchan <kanchanmahajan67@gmail.com>
+Date:   Mon Aug 23 14:12:15 2021 +0530
+
+    Modularized code using functions and removed unnecessary code.
+
+commit 935f7468f9528902f162b9bb8d047b39cd93d927
+Author: Goforkanchan <kanchanmahajan67@gmail.com>
+Date:   Mon Aug 23 13:59:15 2021 +0530
+
+    Added proper comments.
+
+commit b69b928616eab5578aec7f317d07007dacf761f6
+Author: Goforkanchan <kanchanmahajan67@gmail.com>
+Date:   Mon Aug 23 13:57:51 2021 +0530
+
+    Added code for encoding the result string.
+
+commit 646d47f5f95ef44cf28c8451c5a9df7754f98852
+Merge: 29ffc80 5c0020a
+Author: Goforkanchan <kanchanmahajan67@gmail.com>
+Date:   Mon Aug 23 13:46:07 2021 +0530
+
+    Merge branch 'master' of https://github.com/Goforkanchan/AlienNumberSDP
+
+commit 29ffc80476958263f8e413c2af16bbbdd8e86926
+Author: Goforkanchan <kanchanmahajan67@gmail.com>
+Date:   Mon Aug 23 13:30:27 2021 +0530
+
+    Added dirty version of ALienNumber
+
+commit 5c0020a330b6afb6cc813246655ce1c2d47783db
+Author: Goforkanchan <kanchanmahajan67@gmail.com>
+Date:   Mon Aug 23 13:29:56 2021 +0530
+
+    Initial commit
