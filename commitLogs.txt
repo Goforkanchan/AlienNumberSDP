@@ -1,3 +1,15 @@
+commit e6ef32641ebf77f049611ed8986049a88ce96a6b
+Author: Goforkanchan <kanchanmahajan67@gmail.com>
+Date:   Mon Aug 23 20:18:57 2021 +0530
+
+    Made variable names more meaningful so that the operations done become more comprehensive.
+
+commit ec5daadc62145857e40aa2fb64d6d7bec35416fa
+Author: Goforkanchan <kanchanmahajan67@gmail.com>
+Date:   Mon Aug 23 16:09:49 2021 +0530
+
+    Added a commit log file.
+
 commit 277445f862ab4c5b08a1be921bae412a631c78eb
 Author: Goforkanchan <kanchanmahajan67@gmail.com>
 Date:   Mon Aug 23 16:01:17 2021 +0530
