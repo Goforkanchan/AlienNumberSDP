@@ -2,7 +2,7 @@ import java.util.*;
 
 public class AlienNumber {
     //ArrayList of a number to store the value of each special char.
-    static ArrayList<Character> arr = new ArrayList<>();
+    static ArrayList<Character> mapChar = new ArrayList<>();
     public static void main(String args[]) {
         //String input
         String str1 = "!@^*!";
@@ -10,11 +10,11 @@ public class AlienNumber {
         String str3 = "^!@*!";
         String str4 = "@@@!!!!";
         String str5 = "!!!@@";
-        arr.add('!');
-        arr.add('@');
-        arr.add('^');
-        arr.add('&');
-        arr.add('*');
+        mapChar.add('!');
+        mapChar.add('@');
+        mapChar.add('^');
+        mapChar.add('&');
+        mapChar.add('*');
         succ_alien(str1);
         succ_alien(str2);
         succ_alien(str3);
@@ -23,24 +23,24 @@ public class AlienNumber {
     }
 
     public static void succ_alien(String str1) {
-        ArrayList<Integer> num = new ArrayList<>();
+        ArrayList<Integer> number = new ArrayList<>();
         for (int i = 0; i < str1.length(); i++) {
-            num.add(arr.indexOf(str1.charAt(i)));
+            number.add(mapChar.indexOf(str1.charAt(i)));
         }
-        System.out.println(num);
-        int decimal = getDecimalVal(num);
+        System.out.println(number);
+        int decimal = getDecimalVal(number);
         String res = increasedNum(decimal);
 
         //Considering leading zeros
         int j = 0;
-        for (int i = 0; i < num.size(); i++) {
-            if (num.get(i) == 0)
+        for (int i = 0; i < number.size(); i++) {
+            if (number.get(i) == 0)
                 res = '0'+res;
             else
                 break;
             j++;
         }
-        if (j == num.size())
+        if (j == number.size())
             res = res.substring(1);
         System.out.println(res);
         String encodedStr = encode(res);
@@ -51,7 +51,7 @@ public class AlienNumber {
     public static String encode (String result) {
         String encodedStr = "";
         for (int i = 0; i < result.length(); i++)
-            encodedStr += arr.get(result.charAt(i) - 48);
+            encodedStr += mapChar.get(result.charAt(i) - 48);
         return encodedStr;
     }
 
