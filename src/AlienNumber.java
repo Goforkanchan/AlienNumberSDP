@@ -5,6 +5,10 @@ public class AlienNumber {
     public static void main(String args[]) {
         //String input
         String str1 = "!@^*!";
+        String str2 = "!!!";
+        String str3 = "^!@*!";
+        String str4 = "@@@!!!!";
+        String str5 = "!!!@@";
         //ArrayList of a number to store the value of each special char.
         arr.add('!');
         arr.add('@');
@@ -12,6 +16,10 @@ public class AlienNumber {
         arr.add('&');
         arr.add('*');
         succ_alien(str1);
+        succ_alien(str2);
+        succ_alien(str3);
+        succ_alien(str4);
+        succ_alien(str5);
     }
 
     public static void succ_alien(String str1) {
@@ -25,8 +33,15 @@ public class AlienNumber {
         //Stores result string
         String res = increasedNum(decimal);
         //Adding zero at the start
-        if (num.get(0) == 0)
-            res = '0'+res;
+//        if (num.get(0) == 0)
+//            res = '0'+res;
+        for (int i = 0; i < num.size(); i++) {
+            if (num.get(i) == 0)
+                res = '0'+res;
+            else
+                break;
+        }
+
         //Encoding the increased number
         System.out.println(res);
         String encodedStr = encode(res);
